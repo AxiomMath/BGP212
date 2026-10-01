@@ -1,0 +1,39 @@
+name = "gap212"
+defaultTargets = ["Gap212"]
+
+[leanOptions]
+pp.unicode.fun = true
+autoImplicit = false
+relaxedAutoImplicit = false
+maxSynthPendingDepth = 3
+
+# Mathlib's standard linter set. The `weak.` prefix means Lake will not fail if a
+# revision does not define the option.
+weak.linter.mathlibStandardSet = true
+
+# matching PrimeGapsLib
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "288f16d9a07189233a9bc5e1c143c38d1f3f4d37"
+
+# The H1 <= 246 development (Polymath8b, conditional on Bombieri-Vinogradov). Supplies the GPY
+# sieve infrastructure this project reuses, and the shape of the conditional statement: see
+# `bombieriVinogradov_and_existsEpsCert50_imply_prime_gap_le_246`. Its Mathlib pin is the rev
+# above.
+[[require]]
+name = "PrimeGapsLib"
+git = "https://github.com/AxiomMath/PrimeGapsLib.git"
+rev = "main"
+
+[[lean_lib]]
+name = "Gap212"
+
+# The comparator pair, not in defaultTargets: `Gap212Challenge` states its theorems with
+# `sorry`, and `lake lint` derives its scope from the default targets. The comparator
+# builds both modules itself.
+[[lean_lib]]
+name = "Gap212Challenge"
+
+[[lean_lib]]
+name = "Gap212Solution"

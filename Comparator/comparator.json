@@ -1,0 +1,14 @@
+{
+    "challenge_module": "Gap212Challenge.Basic",
+    "solution_module": "Gap212Solution.Basic",
+    "theorem_names": [
+        "Gap212.Challenge.thm_main",
+        "Gap212.Challenge.thm_nth"
+    ],
+    "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+    ],
+    "enable_nanoda": true
+}
